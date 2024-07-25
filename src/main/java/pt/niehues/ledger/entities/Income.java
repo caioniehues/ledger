@@ -17,6 +17,4 @@ public class Income extends Transaction {
     @JoinColumn(name = "payer_id", nullable = false)
     private Payer payer;
 
-    @Column(name = "amount", nullable = false, precision = 10, scale = 2)
-    private BigDecimal amount;
 }

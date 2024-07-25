@@ -27,10 +27,10 @@ public class Transaction {
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @Column(name = "date_and_time", nullable = false)
+    @Column(name = "timestamp", nullable = false)
     @JdbcTypeCode(SqlTypes.TIMESTAMP_WITH_TIMEZONE)
     @TimeZoneStorage(TimeZoneStorageType.AUTO)
-    private ZonedDateTime dateAndTime;
+    private ZonedDateTime timestamp;
 
     @Column(name = "description")
     private String description;

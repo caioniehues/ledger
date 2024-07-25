@@ -17,8 +17,6 @@ public class Expense extends Transaction {
     @JoinColumn(name = "envelope_id", nullable = false)
     private Envelope envelope;
 
-    @Column(name = "amount", nullable = false, precision = 10, scale = 2)
-    private BigDecimal amount;
 
     @OneToOne(optional = false, orphanRemoval = true)
     @JoinColumn(name = "payee_id", nullable = false)
