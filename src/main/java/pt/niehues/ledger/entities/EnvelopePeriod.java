@@ -6,21 +6,19 @@ import lombok.Getter;
 @Getter
 public enum EnvelopePeriod {
 
-    MONTHLY("Monthly", 1),
-    TWO_MONTHS("Two Months", 2),
-    THREE_MONTHS("Three Months", 3),
-    SIX_MONTHS("Six Months", 6),
-    ANNUAL("Annual", 12),
-    GOAL("Goal", 0);
+    MONTHLY("Monthly"),
+    TWO_MONTHS("Two Months"),
+    THREE_MONTHS("Three Months"),
+    SIX_MONTHS("Six Months"),
+    ANNUAL("Annual"),
+    GOAL("Goal");
 
 
 
     private final String name;
-    private final int months;
 
 
-    EnvelopePeriod(String name, int months) {
+    EnvelopePeriod(String name) {
         this.name = name;
-        this.months = months;
     }
 }

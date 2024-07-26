@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode
 public class Expense extends Transaction {
 
     @ManyToOne(optional = false)

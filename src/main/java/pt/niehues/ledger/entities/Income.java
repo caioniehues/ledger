@@ -10,11 +10,11 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-@EqualsAndHashCode
 public class Income extends Transaction {
 
     @OneToOne(optional = false, orphanRemoval = true)
     @JoinColumn(name = "payer_id", nullable = false)
     private Payer payer;
+
 
 }
