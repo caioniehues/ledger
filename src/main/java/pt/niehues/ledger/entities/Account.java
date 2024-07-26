@@ -3,9 +3,14 @@ package pt.niehues.ledger.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.TimeZoneStorage;
+import org.hibernate.annotations.TimeZoneStorageType;
 import org.hibernate.proxy.HibernateProxy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -28,6 +33,11 @@ public class Account {
 
     @OneToMany(mappedBy = "account", orphanRemoval = true)
     private Set<Transaction> transactions = new LinkedHashSet<>();
+
+    @Column(name = "last_transaction_date")
+    @LastModifiedDate
+    @TimeZoneStorage(TimeZoneStorageType.AUTO)
+    private ZonedDateTime lastTransactionDate;
 
     @Override
     public final boolean equals(Object o) {

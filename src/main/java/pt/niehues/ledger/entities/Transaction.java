@@ -8,6 +8,7 @@ import org.hibernate.annotations.TimeZoneStorage;
 import org.hibernate.annotations.TimeZoneStorageType;
 import org.hibernate.proxy.HibernateProxy;
 import org.hibernate.type.SqlTypes;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -27,10 +28,10 @@ public class Transaction {
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
 
-    @Column(name = "timestamp", nullable = false)
-    @JdbcTypeCode(SqlTypes.TIMESTAMP_WITH_TIMEZONE)
+    @Column(name = "creation_date")
+    @CreatedDate
     @TimeZoneStorage(TimeZoneStorageType.AUTO)
-    private ZonedDateTime timestamp;
+    private ZonedDateTime creationDate;
 
     @Column(name = "description")
     private String description;

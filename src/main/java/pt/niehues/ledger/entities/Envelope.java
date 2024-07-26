@@ -37,7 +37,7 @@ public class Envelope {
     @JdbcTypeCode(SqlTypes.VARCHAR)
     private EnvelopePeriod envelopePeriod;
 
-    @Column(name = "year_month", nullable = false)
+    @Column(name = "year_month")
     @JdbcTypeCode(SqlTypes.DATE)
     private YearMonth yearMonth;
 
